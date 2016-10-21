@@ -6,26 +6,29 @@
  */
 module.exports = function Set() {
     this.dataStore = [];
+    this.add = add;
+    this.remove = remove;
+    this.show = show;
 };
-Set.prototype.add = function(data) {
+function add(data) {
     if (this.dataStore.indexOf(data) < 0) {
         this.dataStore.push(data);
         return true;
     }
     return false;
-};
-Set.prototype.remove = function(data) {
+}
+function remove(data) {
     var pos = this.dataStore.indexOf(data);
     if (pos > -1) {
         this.dataStore.splice(pos, 1);
         return true;
     }
     return false
-};
-Set.prototype.show = function () {
+}
+function show() {
     return this.dataStore;
-};
-// module.exports = {
-//     Set: Set
-// };
+}
+function remove(data) {
+    root = removeNode(this.root, data);
+}
 
