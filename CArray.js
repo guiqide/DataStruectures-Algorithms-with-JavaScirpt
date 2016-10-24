@@ -1,15 +1,25 @@
 /**
  * Created by GUIQD on 2016-10-20.
  */
+var bubbleSort = require('./bubbleSort');
+var selectionSort = require('./selectionSort');
+var insertionSort = require('./insertionSort');
+var shellsort = require('./shellsort');
 module.exports = function Carray(numElements) {
     this.dataStore = [];
     this.pos = 0;
     this.numElements = numElements;
+    this.gaps = [5, 3, 1];
     this.insert = insert;
     this.toString = toString;
     this.clear = clear;
     this.setData = setData;
     this.swap = swap;
+    this.bubbleSort = bubbleSort;
+    this.selectionSort = selectionSort;
+    this.insertionSort = insertionSort;
+    this.setGaps = setGaps;
+    this.shellsort = shellsort;
     for (var i=0; i<numElements; ++i) {
         this.dataStore[i] = i;
     }
@@ -42,4 +52,8 @@ function swap(arr, index1, index2) {
     var temp = arr[index1];
     arr[index1] = arr[index2];
     arr[index2] = temp;
+}
+function setGaps(arr) {
+    "use strict";
+    this.gaps = arr;
 }
