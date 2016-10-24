@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var preTime = new Date().getTime();
+    console.log(preTime);
+    for (let i = 0; i < 1000; i++) {
+        var s = i;
+    }
+    var finTime = new Date().getTime();
+    console.log(finTime);
+    console.log(finTime - preTime);
+</script>
+</body>
+</html>
